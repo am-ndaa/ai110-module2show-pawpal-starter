@@ -7,6 +7,8 @@
 - Briefly describe your initial UML design.
 - What classes did you include, and what responsibilities did you assign to each?
 
+3 core actions a user should be able to perform: adding a pet, see tasks for all pets in daily view, see reasoning. 
+
 **b. Design changes**
 
 - Did your design change during implementation?
