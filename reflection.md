@@ -9,7 +9,7 @@
 
 3 core actions a user should be able to perform: adding a pet, see tasks for all pets in daily view, see reasoning. 
 
-Main objects: Pet (attributes: species, name, age etc. methods: add pet, remove pet). Tasks (attributes: which pet its for, actual task title, time it takes to complete, methods: add task, remove task, edit task). DailySchedule (attributes: contains list of Task objects, methods: calculate daily schedule)
+Main objects: Pet (attributes: species, name, age etc). Tasks (attributes: which pet its for, actual task title, time it takes to complete, and priority). DailySchedule (attributes: contains list of Task objects, methods: calculate daily schedule). Owner (attributes: name and time available)
 
 **b. Design changes**
 
