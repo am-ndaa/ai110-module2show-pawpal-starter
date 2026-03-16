@@ -16,6 +16,8 @@ Main objects: Pet (attributes: species, name, age etc). Tasks (attributes: which
 - Did your design change during implementation?
 - If yes, describe at least one change and why you made it.
 
+Yes I did. The main change I made was clarifying relationships by making sure that the owner could manage the pets and the schedule. I added methods to Owner and DailySchedule. 
+
 ---
 
 ## 2. Scheduling Logic and Tradeoffs
