@@ -42,6 +42,7 @@ class Task:
     description: str
     time: int
     frequency: str
+    start_time: int = None  # start time in minutes from start of day
     completion_status: bool = False
 
     def mark_complete(self):
@@ -71,8 +72,24 @@ class Scheduler:
         sorted_tasks = sorted(self.tasks, key=lambda t: (t.frequency != 'daily', t.time))
         scheduled = []
         total_time = 0
+        current_time = 0  # start from 0
         for task in sorted_tasks:
             if total_time + task.time <= self.owner.time_available:
                 scheduled.append(task)
+                if task.start_time is None:
+                    task.start_time = current_time
+                current_time += task.time
                 total_time += task.time
         return scheduled
+
+    def check_conflicts(self) -> List[str]:
+        warnings = []
+        scheduled_tasks = [t for t in self.tasks if t.start_time is not None]
+        for i, task1 in enumerate(scheduled_tasks):
+            for task2 in scheduled_tasks[i+1:]:
+                if task1.start_time < task2.start_time + task2.time and task2.start_time < task1.start_time + task1.time:
+                    if task1.pet == task2.pet:
+                        warnings.append(f"Conflict: {task1.description} for {task1.pet.name} overlaps with {task2.description} for {task2.pet.name}.")
+                    else:
+                        warnings.append(f"Conflict: {task1.description} for {task1.pet.name} overlaps with {task2.description} for {task2.pet.name}.")
+        return warnings
