@@ -217,6 +217,10 @@ class Scheduler:
         
         return None
     
+    def sort_by_time(self, schedule: Schedule) -> None:
+        """Sort tasks in the schedule by their time attribute"""
+        schedule.tasks_scheduled.sort(key=lambda t: (t.time.hour, t.time.minute) if t.time else (23, 59))
+    
     def validate_schedule(self, schedule: Schedule) -> dict:
         """Validate a schedule and return status and any issues"""
         issues = []
