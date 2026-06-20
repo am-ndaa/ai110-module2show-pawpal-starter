@@ -52,6 +52,14 @@ class Task:
     def get_priority_value(self) -> int:
         """Return numeric priority for sorting"""
         return self.priority.value
+    
+    def mark_complete(self) -> None:
+        """Mark the task as completed"""
+        self.completed = True
+    
+    def mark_incomplete(self) -> None:
+        """Mark the task as incomplete"""
+        self.completed = False
 
 
 class Owner:

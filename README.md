@@ -46,13 +46,61 @@ pip install -r requirements.txt
 
 Paste a sample of your app's CLI or Streamlit output here so a reader can see what a generated plan looks like:
 
-```
-# e.g.:
-# Daily plan for Biscuit (Golden Retriever):
-#   08:00 — Morning walk (30 min) [priority: high]
-#   09:00 — Feeding (10 min) [priority: high]
-#   ...
-```
+============================================================
+🐾 PawPal+ - Daily Pet Care Scheduler
+============================================================
+
+Owner: Alex
+Available: 07:00 - 23:00
+Total available hours: 16 hours      
+
+------------------------------------------------------------
+Pet 1: Dog
+------------------------------------------------------------
+Added Buddy (dog, 5 years old) with 4 tasks
+  - Morning Walk (45m, HIGH)
+  - Breakfast (10m, HIGH)
+  - Play Time (30m, MEDIUM)
+  - Dinner (10m, HIGH)
+
+------------------------------------------------------------
+Pet 2: Cat
+------------------------------------------------------------
+Added Luna (cat, 3 years old) with 4 tasks
+  - Feeding (5m, HIGH)
+  - Litter Box (10m, HIGH)
+  - Play Session (25m, MEDIUM)       
+  - Grooming (20m, LOW)
+
+============================================================
+📅 TODAY'S SCHEDULE
+============================================================
+
+🐕 BUDDY'S SCHEDULE
+------------------------------------------------------------
+Daily plan for Buddy (dog, 5 years old):
+  07:00 — Morning Walk (45 min) [priority: high]
+  07:45 — Breakfast (10 min) [priority: high]
+  08:00 — Dinner (10 min) [priority: high]
+  08:15 — Play Time (30 min) [priority: medium]
+
+Total time needed: 1h 35m
+✓ Valid: True
+
+🐱 LUNA'S SCHEDULE
+------------------------------------------------------------
+Daily plan for Luna (cat, 3 years old):
+  07:00 — Feeding (5 min) [priority: high]
+  07:15 — Litter Box (10 min) [priority: high]
+  07:30 — Play Session (25 min) [priority: medium]
+  08:00 — Grooming (20 min) [priority: low]
+
+Total time needed: 1h 0m
+Total pets: 2
+Total tasks across all pets: 8
+Buddy's scheduled time: 95 minutes (1h 35m)
+Luna's scheduled time: 60 minutes (1h 0m)
+Combined daily commitment: 155 minutes (2h 35m)`
 
 ## 🧪 Testing PawPal+
 
