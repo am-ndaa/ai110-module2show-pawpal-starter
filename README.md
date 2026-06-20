@@ -1,3 +1,7 @@
+# SUMMARY
+
+This was a great introduction to a fullstack project using AI. I think somewhere where students might struggle is coming up with the 4 classes. I think the instructions were a little unclear because they refer to the "4 classes" a lot and later they show what the classes should be. However if a group came up with different classes they might be thrown off once they see what they should've been later on. I was using github copilot for this and another place I struggled was with creating the mermaid.js diagram. It kept giving me either a drawing or implemented code. Its something to look out for. 
+
 # PawPal+ (Module 2 Project)
 
 You are building **PawPal+**, a Streamlit app that helps a pet owner plan care tasks for their pet.
