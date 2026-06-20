@@ -7,6 +7,13 @@
 - Briefly describe your initial UML design.
 - What classes did you include, and what responsibilities did you assign to each?
 
+the user should be able to add pets, schedule tasks and then see the tasks for the day. 
+the classes would be owner, pet, task and schedule
+owner would have the times the owner is available
+pet would have name, species and age attributes
+task would have time, type and priority attributes. 
+schedule would have methods like add task.
+
 **b. Design changes**
 
 - Did your design change during implementation?

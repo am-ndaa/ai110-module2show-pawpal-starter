@@ -1,15 +1,85 @@
-classDiagram
-    %% Replace the placeholders below with your actual classes, attributes, methods, and relationships.
-    %% Keep this file updated so it matches your final implementation.
+owns
 
-    class ClassName {
-        +type attribute
-        +method() returnType
-    }
+has
 
-    class AnotherClass {
-        +type attribute
-        +method() returnType
-    }
+generates
 
-    ClassName --> AnotherClass : relationship
+1
+
+1
+
+*
+
+*
+
+Owner
+
++str name
+
++time available_start
+
++time available_end
+
++time work_start
+
++time work_end
+
++is_available_at(time) : bool
+
++available_hours_per_day() : int
+
+Pet
+
++str name
+
++str species
+
++int age
+
++get_summary() : str
+
++get_species_based_tasks() : List
+
+Task
+
++str name
+
++str type
+
++Priority priority
+
++int duration_minutes
+
++time time
+
++get_priority_value() : int
+
+Schedule
+
++Pet pet
+
++Owner owner
+
++List tasks_scheduled
+
++datetime date
+
++add_task(Task, time) : bool
+
++remove_task(Task) : bool
+
++get_schedule_summary() : str
+
++is_feasible() : bool
+
+Scheduler
+
++Owner owner
+
++Pet pet
+
++generate_daily_schedule(List) : Schedule
+
++validate_schedule(Schedule) : dict
+
+
