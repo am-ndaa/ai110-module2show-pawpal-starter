@@ -1,6 +1,7 @@
 import streamlit as st
 from pawpal_system import Owner, Pet, Task, Priority, Scheduler
 from datetime import time
+from rag_utils import build_rag_answer, load_knowledge_base
 
 st.set_page_config(page_title="PawPal+", page_icon="🐾", layout="centered")
 
@@ -89,6 +90,27 @@ if st.session_state.tasks:
         st.rerun()
 else:
     st.info("No tasks yet. Add one above.")
+
+# Load and use a simple local knowledge base for RAG-style guidance
+kb_entries = load_knowledge_base()
+
+st.divider()
+
+st.subheader("💡 Ask PawPal+ for pet-care guidance")
+st.caption("Use a small local knowledge base to get helpful pet-care advice based on your chosen species and tasks.")
+rag_query = st.text_input("What would you like to know?", value="How should I care for this pet today?")
+if st.button("🧠 Get guidance"):
+    if not rag_query.strip():
+        st.warning("Please enter a question.")
+    else:
+        pet_context = f"Species: {species}; pet name: {pet_name}"
+        if st.session_state.tasks:
+            task_names = ", ".join(task["name"] for task in st.session_state.tasks)
+            full_query = f"{rag_query} Context: {pet_context}; current tasks: {task_names}"
+        else:
+            full_query = f"{rag_query} Context: {pet_context}"
+        answer = build_rag_answer(full_query, kb_entries)
+        st.write(answer)
 
 st.divider()
 
